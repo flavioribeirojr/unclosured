@@ -1,0 +1,14 @@
+@font-face {
+    font-family: Anton;
+    src: url('../fonts/Anton-Regular.ttf');
+}
+
+@font-face {
+    font-family: Solway;
+    src: url('../fonts/Solway-Regular.ttf');
+}
+
+@font-face {
+    font-family: SolwayLight;
+    src: url('../fonts/Solway-Light.ttf');
+}

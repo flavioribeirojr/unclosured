@@ -1,0 +1,47 @@
+@import "../../assets/scss/colors.scss";
+
+.header {
+  .headerNav {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 420px;
+    margin-top: 80px;
+    padding-right: 70px;
+
+    .headerNavItem {
+      font-family: Anton;
+      font-size: 45px;
+      color: white;
+      position: relative;
+      text-decoration: none;
+
+      &::after {
+        content: '';
+        width: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 8px;
+        width: 0;
+        transition: width .3s linear;
+      }
+
+      &:hover::after {
+        width: 110%;
+      }
+
+      &.purple::after {
+        background-color: $purple;
+      }
+      &.yellow::after {
+        background-color: $yellow;
+      }
+      &.red::after {
+        background-color: $red;
+      }
+      &.green::after {
+        background-color: $green;
+      }
+    }
+  }
+}
