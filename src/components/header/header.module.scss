@@ -1,16 +1,70 @@
 @import "../../assets/scss/colors.scss";
 
 .header {
+  background-color: transparent;
+  max-height: 800px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  transition: background .5s linear, height 1s linear;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &.inverse {
+    background-color: #242424;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    animation: toInverse .5s linear;
+
+    .brand {
+      opacity: 1;
+      padding-left: 30px;
+      width: 700px;
+    }
+
+    .headerNav {
+      animation: headerSwitch 2s linear;
+      overflow: hidden;
+      margin-top: 0;
+      padding: 25px 0;
+      padding-right: 70px;
+      margin-left: 140px;
+    }
+  }
+
+  .brand {
+    opacity: 0;
+    display: flex;
+    max-height: 800px;
+    overflow: hidden;
+
+    >.brandTitle {
+      font-family: Anton;
+      font-size: 22px;
+      color: white;
+      letter-spacing: 7px;
+      margin: 0;
+      margin-left: 15px;
+      align-self: flex-end;
+    }
+
+    >.logo {
+      width: 80px;
+    }
+  }
+
   .headerNav {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-left: 420px;
-    margin-top: 80px;
+    margin-left: 470px;
     padding-right: 70px;
 
     .headerNavItem {
       font-family: Anton;
-      font-size: 45px;
+      font-size: 35px;
       color: white;
       position: relative;
       text-decoration: none;
@@ -43,5 +97,21 @@
         background-color: $green;
       }
     }
+  }
+}
+
+@keyframes headerSwitch {
+  from {
+    max-height: 0;
+  } to {
+    max-height: 800px;
+  }
+}
+
+@keyframes toInverse {
+  from {
+    top: -100px;
+  } to {
+    top: 0;
   }
 }

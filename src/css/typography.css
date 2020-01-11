@@ -12,3 +12,13 @@
     font-family: SolwayLight;
     src: url('../fonts/Solway-Light.ttf');
 }
+
+@font-face {
+    font-family: Ubuntu;
+    src: url('../fonts/Ubuntu-M.ttf');
+}
+
+@font-face {
+    font-family: UbuntuLight;
+    src: url('../fonts/Ubuntu-L.ttf');
+}

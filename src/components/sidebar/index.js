@@ -1,4 +1,5 @@
 import React from 'react';
+import useScrollWatch from '../../hooks/useScrollWatch';
 import style from './sidebar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -24,9 +25,14 @@ const socialMedias = [
   }
 ];
 
+const MAX_SCROLL_TO_SHOW_LOGO = 100;
+
 function Sidebar() {
+  const verticalScroll = useScrollWatch();
+  const isInverse = verticalScroll >= MAX_SCROLL_TO_SHOW_LOGO;
+
   return (
-    <aside className={style.sidebar}>
+    <aside className={`${style.sidebar} ${isInverse ? style.inverse : ''}`}>
       <div className={style.logo}>
         <img src={BDULogo} alt="Borda do Universo" />
         <h1 className={style.brand}>

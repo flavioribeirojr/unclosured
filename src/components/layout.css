@@ -2,8 +2,15 @@
 
 body {
     background-color: #2c2b2b;
+    margin: 0;
 }
 
 main {
     margin-left: 400px;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+#gatsby-focus-wrapper {
+    position: relative;
 }

@@ -11,8 +11,18 @@
   justify-content: space-between;
   padding-top: 30px;
 
+  &.inverse {
+    >.logo {
+      max-height: 0;
+      margin-bottom: 50px;
+    }
+  }
+
   >.logo {
     display: flex;
+    max-height: 800px;
+    overflow: hidden;
+    transition: max-height .6s linear;
 
     >img {
       width: 140px;
@@ -103,7 +113,7 @@
 
     >.sidebarFooterStroke {
       width: 25px;
-      height: 300px;
+      height: 250px;
       position: absolute;
 
       >.sidebarFooterStrokeBar {
@@ -123,21 +133,21 @@
       }
 
       &:nth-of-type(1) {
-        height: 330px;
-        right: 25px;
+        height: 270px;
+        right: 15px;
         bottom: -35px;
 
         >.sidebarFooterStrokeBack {
           background-color: #9356cf;
-          left: 50px;
-          top: 11px;
+          left: 40px;
+          top: 9px;
           width: 22px;
-          height: 45px;
+          height: 37px;
         }
       }
 
       &:nth-of-type(2) {
-        right: 10px;
+        right: 3px;
         bottom: -130px;
 
         >.sidebarFooterStrokeBar {
@@ -148,10 +158,10 @@
 
         >.sidebarFooterStrokeBack {
           background-color: #e6c02e;
-          left: 35px;
+          left: 28px;
           top: 7px;
           width: 18px;
-          height: 42px;
+          height: 38px;
         }
       }
     }
