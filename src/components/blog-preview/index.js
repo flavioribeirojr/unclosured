@@ -25,7 +25,7 @@ function BlogPreview({ post }) {
               icon={faClock}
             />
             <span className={style.blogPreviewInfoOptionsItemText}>
-              { post.createdAt }
+              { post.date }
             </span>
           </button>
           <button className={style.blogPreviewInfoOptionsItem}>
