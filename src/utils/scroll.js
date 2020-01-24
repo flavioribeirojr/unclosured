@@ -1,13 +1,10 @@
 function createScrollWatcher() {
-  const browserSupportPageOffset = window.pageXOffset !== undefined;
-  const isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
-
   function getHorizontalOffset() {
-    if (browserSupportPageOffset) {
+    if (browserSupportPageOffset()) {
       return window.pageXOffset;
     }
 
-    if (isCSS1Compat) {
+    if (isCSS1Compat()) {
       return document.documentElement.scrollLeft;
     }
 
@@ -15,11 +12,11 @@ function createScrollWatcher() {
   }
 
   function getVerticalOffset() {
-    if (browserSupportPageOffset) {
+    if (browserSupportPageOffset()) {
       return window.pageYOffset;
     }
 
-    if (isCSS1Compat) {
+    if (isCSS1Compat()) {
       return document.documentElement.scrollTop;
     }
 
@@ -30,6 +27,14 @@ function createScrollWatcher() {
     getHorizontalOffset,
     getVerticalOffset
   };
+
+  function browserSupportPageOffset() {
+    return window.pageXOffset !== undefined;
+  }
+
+  function isCSS1Compat() {
+    return ((document.compatMode || '') === 'CSS1Compat');
+  }
 }
 
 export {

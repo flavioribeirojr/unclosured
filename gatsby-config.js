@@ -1,7 +1,11 @@
+require('dotenv').config();
+
+const queries = require("./src/utils/algolia");
+
 module.exports = {
   siteMetadata: {
     title: `Borda do Universo`,
-    description: `Textos, artigos e links sobre os tecnologia e entretenimento`,
+    description: `Textos, artigos e links sobre tecnologia e entretenimento`,
     author: `@flavioribeirojr`,
   },
   plugins: [
@@ -35,6 +39,16 @@ module.exports = {
         name: `content`,
         path: `${__dirname}/src/content`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+        queries,
+        chunkSize: 10000
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

@@ -2,8 +2,8 @@ import React from 'react';
 import useScrollWatch from '../../hooks/useScrollWatch';
 import style from './sidebar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import Search from '../search';
 import BDULogo from '../../images/bdu.png';
 
 const socialMedias = [
@@ -42,15 +42,7 @@ function Sidebar() {
       </div>
       <form className={style.sidebarSearch}>
         <div className={style.sidebarSearchWrapper}>
-          <FontAwesomeIcon
-            icon={faSearch}
-            className={style.sidebarSearchWrapperIcon}
-          />
-          <input
-            type="serch"
-            placeholder="Buscar post"
-            className={style.sidebarSearchWrapperInput}
-          />
+          <Search /> 
         </div>
       </form>
       <div className={style.sidebarFooter}>
