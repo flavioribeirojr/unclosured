@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
+import PostDetails from '../../components/post';
 import { graphql } from 'gatsby';
 
 export default function Post({ data: graphqlData }) {
@@ -9,17 +10,10 @@ export default function Post({ data: graphqlData }) {
   return (
     <Layout>
       <SEO title={post.title} />
-      <div>
-        <h1>
-          { post.title }
-        </h1>
-        <h2>
-          { post.date }
-        </h2>
-        <article
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </div>
+      <PostDetails
+        post={post}
+        content={html}
+      />
     </Layout>
   )
 }
@@ -32,6 +26,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        cover
       }
     }
   }
