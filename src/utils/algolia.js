@@ -7,10 +7,10 @@ const postsQuery = `{
         objectID: id
         frontmatter {
           title
+          description
           slug
           date(formatString: "DD/MM/YYYY")
         }
-        excerpt(pruneLength: 5000)
       }
     }
   }
@@ -22,14 +22,10 @@ const flatten = arr =>
     ...rest
   }));
 
-const settings = { attributesToSnippet: [`excerpt:20`] }
-
 const queries = [
   {
     query: postsQuery,
-    transformer: ({ data }) => flatten(data.posts.edges),
-    // indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
-    // settings
+    transformer: ({ data }) => flatten(data.posts.edges)
   }
 ];
 

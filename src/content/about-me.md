@@ -2,7 +2,7 @@
 title: Sobre mim
 slug: about-me
 date: 2020-01-12
-description: Hey, wanna know more about this site author? Let's make a quick jorney then :)
+description: Uma breve introdução ao blog. 
 cover: 'https://i.ibb.co/YPFRRxH/lagoa-de-jansen-crdito-seturma-1024x685.jpg'
 path: /about-me
 author: "{{authors.flavio}}"

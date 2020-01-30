@@ -22,7 +22,7 @@ export default connectHits(function SearchResults({ hits, isFocused }) {
                   { hit.title }
                 </header>
                 <span className={style.searchResultsItemDescription}>
-                  { hit.excerpt }
+                  { hit.description }
                 </span>
               </Link>
             </li>
