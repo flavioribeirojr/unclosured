@@ -1,3 +1,6 @@
+const gatsbyFrontMatterTemplateParser = require('gatsby-frontmatter-template-parser');
+const path = require('path');
+const yamlModelsDirectory = path.join(__dirname, 'src', 'content-metadata');
 require('dotenv').config();
 
 const queries = require("./src/utils/algolia");
@@ -32,7 +35,17 @@ module.exports = {
         icon: `src/images/bdu.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      "options": {
+        engines: {
+            yaml: gatsbyFrontMatterTemplateParser({
+                yamlModelsDirectory
+            })
+        }
+      }
+    },
+    //`gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

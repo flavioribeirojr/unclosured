@@ -22,6 +22,27 @@ function Post({ post, content }) {
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </section>
+      <footer className={style.postFooter}>
+        <address className={style.postFooterContact}>
+          <span className={style.postFooterContactTitle}>
+            Autor
+          </span>
+          <p className={style.postFooterContactName}>
+            { post.author.name }
+          </p>
+          <blockquote className={style.postFooterContactPhrase}>
+            { post.author.phrase }
+          </blockquote>
+        </address>
+        <p className={style.postFooterTime}>
+          Posted at <time dateTime={post.date}>{ post.date }</time>
+        </p>
+        <img
+          src={post.author.photo}
+          className={style.postFooterPhoto}
+          alt="Foto do autor do post"
+        />
+      </footer>
     </article>
   )
 }

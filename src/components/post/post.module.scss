@@ -80,4 +80,71 @@
       }
     }
   }
+
+  .postFooter {
+    background-color: #242424;
+    width: 100%;
+    height: 200px;
+    margin-top: 70px;
+    position: relative;
+    padding: 20px 80px;
+    padding-right: 0;
+    box-sizing: border-box;
+
+    >.postFooterPhoto {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      position: absolute;
+      top: -80px;
+      right: 50px;
+      border: 8px solid white;
+    }
+
+    >.postFooterContact {
+      font-style: normal;
+
+      >.postFooterContactTitle {
+        font-family: UbuntuLight;
+        color: white;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+      }
+
+      >.postFooterContactName {
+        font-family: Anton;
+        color: white;
+        font-size: 26px;
+        margin: 0;
+      }
+
+      >.postFooterContactPhrase {
+        font-style: italic;
+        font-family: Ubuntu;
+        color: white;
+        position: relative;
+        margin: 10px 0;
+        width: 65%;
+
+        &::before {
+          content: close-quote;
+          font-size: 20px;
+          color: white;
+        }
+        &::after {
+          content: open-quote;
+          font-size: 20px;
+          color: white;
+        }
+      }
+    }
+
+    >.postFooterTime {
+      font-family: Ubuntu;
+      color: white;
+      margin-top: 30px;
+    }
+  }
 }

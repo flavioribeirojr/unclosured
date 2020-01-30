@@ -15,7 +15,7 @@ export default function Post({ data: graphqlData }) {
         content={html}
       />
     </Layout>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -26,7 +26,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
-        cover
+        cover,
+        author {
+          name
+          title
+          phrase
+          photo
+        }
       }
     }
   }

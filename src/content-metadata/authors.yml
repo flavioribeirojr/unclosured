@@ -1,0 +1,7 @@
+namespace: authors
+
+flavio:
+  name: Flávio Ribeiro
+  title: Desenvolvedor Web
+  photo: "https://avatars2.githubusercontent.com/u/21633230?s=460&v=4"
+  phrase: "Não importa como você leve sua vida, sua inteligência o defenderá melhor do que uma espada. Trate de mantê-la afiada!"
