@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faShare, faBookmark } from '@fortawesome/free-solid-svg-icons';
 import style from './blog-preview.module.scss';
@@ -12,9 +13,9 @@ function BlogPreview({ post }) {
         className={style.blogPreviewCover}
       />
       <div className={style.blogPreviewInfo}>
-        <a href={`/${post.slug}`} className={style.blogPreviewInfoTitle}>
+        <Link to={`/${post.slug}`} className={style.blogPreviewInfoTitle}>
           { post.title }
-        </a>
+        </Link>
         <p className={style.blogPreviewInfoDescription}>
           { post.description }
         </p>
