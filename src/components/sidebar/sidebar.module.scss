@@ -1,3 +1,5 @@
+@import "../../assets/scss/colors.scss";
+
 .sidebar {
   width: 380px;
   height: 97vh;
@@ -11,13 +13,6 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 30px;
-
-  &.inverse {
-    >.logo {
-      max-height: 0;
-      margin-bottom: 50px;
-    }
-  }
 
   >.logo {
     display: flex;
@@ -74,6 +69,62 @@
 
         &:focus {
           border: 1px solid #a55eea;
+        }
+      }
+    }
+  }
+
+  >.sidebarNav {
+    width: 85%;
+    display: block;
+    margin: 20px auto;
+
+    >.sidebarNavList {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      >.sidebarNavListItem {
+        margin: 15px 0;
+
+        >.sidebarNavListItemLink {
+          font-family: Anton;
+          color: white;
+          font-size: 30px;
+          text-decoration: none;
+          position: relative;
+
+          &:hover {
+            &::after {
+              content: '';
+              width: 115%;
+              height: 10px;
+              position: absolute;
+              bottom: -15px;
+              left: -2px;
+            }
+          }
+
+          &::after {
+            content: '';
+            width: 0;
+            transition: width .3s linear;
+          }
+
+          &.purple::after {
+            background-color: $purple;
+          }
+          &.yellow::after {
+            background-color: $yellow;
+          }
+          &.red::after {
+            background-color: $red;
+          }
+          &.green::after {
+            background-color: $green;
+          }
         }
       }
     }

@@ -1,9 +1,9 @@
 import React from 'react';
-import useScrollWatch from '../../hooks/useScrollWatch';
-import style from './sidebar.module.scss';
+import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Search from '../search';
+import style from './sidebar.module.scss';
 import BDULogo from '../../images/bdu.png';
 
 const socialMedias = [
@@ -25,14 +25,32 @@ const socialMedias = [
   }
 ];
 
-const MAX_SCROLL_TO_SHOW_LOGO = 100;
+const navigation = [
+  {
+    name: 'BLOG',
+    url: '/',
+    colorClassname: 'purple'
+  },
+  {
+    name: 'FAVORITOS',
+    url: '/bookmarks',
+    colorClassname: 'green'
+  },
+  {
+    name: 'CONTATO',
+    url: '/contact',
+    colorClassname: 'yellow'
+  },
+  {
+    name: 'SOBRE O AUTOR',
+    url: '/sobre',
+    colorClassname: 'red'
+  }
+];
 
 function Sidebar() {
-  const verticalScroll = useScrollWatch();
-  const isInverse = verticalScroll >= MAX_SCROLL_TO_SHOW_LOGO;
-
   return (
-    <aside className={`${style.sidebar} ${isInverse ? style.inverse : ''}`}>
+    <aside className={style.sidebar}>
       <div className={style.logo}>
         <img src={BDULogo} alt="Borda do Universo" />
         <h1 className={style.brand}>
@@ -45,6 +63,26 @@ function Sidebar() {
           <Search /> 
         </div>
       </form>
+      <nav className={style.sidebarNav}>
+        <ul className={style.sidebarNavList}>
+          {
+            navigation
+              .map((navigationItem, index) => (
+                <li
+                  key={`${navigationItem.url}-${index}`}
+                  className={style.sidebarNavListItem}
+                >
+                  <Link
+                    to={navigationItem.url}
+                    className={`${style.sidebarNavListItemLink} ${style[navigationItem.colorClassname]}`}
+                  >
+                    { navigationItem.name }
+                  </Link>
+                </li>
+              ))
+          }
+        </ul>
+      </nav>
       <div className={style.sidebarFooter}>
         <address className={style.sidebarFooterContact}>
           <p className={style.sidebarFooterContactName}>
