@@ -1,8 +1,20 @@
 .contact {
   height: 100%;
   padding: 30px 50px;
-  background-image: url('https://images.clipartlogo.com/files/istock/previews/1068/106857169-low-polygon-shapes-black-background-dark-crystals.jpg');
-  background-size: cover;
+  position: relative;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.cdn3.stockunlimited.net/preview1300/galaxy-background-design_2001749.jpg');
+    background-size: cover;
+  }
 
   >.contactTitle {
     font-family: Anton;
@@ -19,6 +31,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .contactFormInput {
+      background-color: white;
+      color: #2c2b2b;
+      font-family: Quicksand;
+      font-weight: bold;
+    }
+
+    .contactFormLabel {
+      color: #2c2b2b;
+
+      &.inverse {
+        color: white;
+      }
+    }
 
     .contactFormTextArea {
       height: auto;

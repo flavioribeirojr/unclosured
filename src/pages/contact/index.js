@@ -16,13 +16,22 @@ function Contact() {
           <FormGroup
             label="Seu Nome"
             type="text"
+            inputClassName={styles.contactFormInput}
+            labelClassName={styles.contactFormLabel}
+            inverseLabelClassName={styles.inverse}
           />
           <FormGroup
             label="Seu Email"
             type="email"
+            inputClassName={styles.contactFormInput}
+            labelClassName={styles.contactFormLabel}
+            inverseLabelClassName={styles.inverse}
           />
           <FormGroup
             label="Deixe sua mensagem"
+            inputClassName={styles.contactFormInput}
+            labelClassName={styles.contactFormLabel}
+            inverseLabelClassName={styles.inverse}
             Input={inputProps => (
               <textarea
                 {...inputProps}
