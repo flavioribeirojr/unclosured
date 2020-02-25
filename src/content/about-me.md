@@ -2,7 +2,9 @@
 title: Sobre mim
 slug: about-me
 date: 2020-01-12
-description: Uma breve introdução ao blog. 
+description:
+    Uma breve introdução ao blog. Se você acabou de cair aqui e quer saber mais sobre o conteúdo,
+    este é o post pra você.
 cover: 'https://i.ibb.co/YPFRRxH/lagoa-de-jansen-crdito-seturma-1024x685.jpg'
 path: /about-me
 author: "{{authors.flavio}}"

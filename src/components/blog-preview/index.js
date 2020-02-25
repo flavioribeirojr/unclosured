@@ -4,7 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faShare, faBookmark } from '@fortawesome/free-solid-svg-icons';
 import style from './blog-preview.module.scss';
 
-function BlogPreview({ post }) {
+function BlogPreview({
+  post,
+  postTitleClassName = '',
+  postDescriptionClassName = '',
+  postOptionsWrapperClassName = '',
+  postOptionsItemClassName = ''
+}) {
   return (
     <div className={style.blogPreview}>
       <img
@@ -13,14 +19,21 @@ function BlogPreview({ post }) {
         className={style.blogPreviewCover}
       />
       <div className={style.blogPreviewInfo}>
-        <Link to={`/${post.slug}`} className={style.blogPreviewInfoTitle}>
+        <Link
+          to={`/${post.slug}`}
+          className={`${style.blogPreviewInfoTitle} ${postTitleClassName}`}
+        >
           { post.title }
         </Link>
-        <p className={style.blogPreviewInfoDescription}>
+        <p
+          className={`${style.blogPreviewInfoDescription} ${postDescriptionClassName}`}
+        >
           { post.description }
         </p>
-        <div className={style.blogPreviewInfoOptions}>
-          <button className={style.blogPreviewInfoOptionsItem}>
+        <div
+          className={`${style.blogPreviewInfoOptions} ${postOptionsWrapperClassName}`}
+        >
+          <button className={`${style.blogPreviewInfoOptionsItem} ${postOptionsItemClassName}`}>
             <FontAwesomeIcon
               className={style.blogPreviewInfoOptionsItemIcon}
               icon={faClock}
@@ -29,7 +42,7 @@ function BlogPreview({ post }) {
               { post.date }
             </span>
           </button>
-          <button className={style.blogPreviewInfoOptionsItem}>
+          <button className={`${style.blogPreviewInfoOptionsItem} ${postOptionsItemClassName}`}>
             <FontAwesomeIcon
               className={style.blogPreviewInfoOptionsItemIcon}
               icon={faShare}
@@ -38,7 +51,7 @@ function BlogPreview({ post }) {
               Compartilhar
             </span>
           </button>
-          <button className={style.blogPreviewInfoOptionsItem}>
+          <button className={`${style.blogPreviewInfoOptionsItem} ${postOptionsItemClassName}`}>
             <FontAwesomeIcon
               className={style.blogPreviewInfoOptionsItemIcon}
               icon={faBookmark}

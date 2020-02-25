@@ -1,12 +1,108 @@
+@import "../../assets/scss/colors.scss";
+
 .blog {
   padding-bottom: 30px;
 
+  >.blogTitle {
+    padding: 0 120px;
+    font-family: Quicksand;
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-weight: 300;
+    margin: 75px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: 70%;
+      height: 4px;
+      background-color: $yellow;
+    }
+
+    &::before {
+      top: -15px;
+    }
+
+    &::after {
+      bottom: -15px;
+    }
+  }
+
   >.blogList {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 30% 30% 30%;
+    grid-auto-rows: 650px;
     grid-row-gap: 60px;
-    padding: 0 250px;
-    margin-top: 70px;
+    justify-content: center;
+    column-gap: 25px;
+    padding: 0 120px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  >.blogListSeparator {
+    font-family: Anton;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: white;
+    text-align: center;
+    margin: 70px 156px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 40%;
+      height: 2px;
+      background-color: white;
+    }
+
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+
+  >.blogDefaultPostsList {
+    display: grid;
+    grid-template-columns: 94%;
+    justify-content: center;
+    grid-auto-rows: 400px;
+    column-gap: 100px;
+    padding: 0 120px;
+    width: 100%;
+    box-sizing: border-box;
+
+    .blogDefaultPostsListItemTitle {
+      margin-bottom: 0;
+    }
+
+    .blogDefaultPostsListItemDescription {
+      height: 100px;
+    }
+
+    .blogDefaultPostsListItemOptions {
+      justify-content: flex-start;
+
+      >.blogDefaultPostsListItemOptionsItem {
+        margin-right: 25px;
+      }
+    }
   }
 
   >.blogPagination {
