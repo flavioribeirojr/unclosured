@@ -28,23 +28,11 @@ const socialMedias = [
 const navigation = [
   {
     name: 'BLOG',
-    url: '/',
-    colorClassname: 'purple'
-  },
-  {
-    name: 'FAVORITOS',
-    url: '/bookmarks',
-    colorClassname: 'green'
+    url: '/'
   },
   {
     name: 'CONTATO',
-    url: '/contact',
-    colorClassname: 'yellow'
-  },
-  {
-    name: 'SOBRE O AUTOR',
-    url: '/sobre',
-    colorClassname: 'red'
+    url: '/contact'
   }
 ];
 
@@ -74,7 +62,7 @@ function Sidebar() {
                 >
                   <Link
                     to={navigationItem.url}
-                    className={`${style.sidebarNavListItemLink} ${style[navigationItem.colorClassname]}`}
+                    className={style.sidebarNavListItemLink}
                   >
                     { navigationItem.name }
                   </Link>

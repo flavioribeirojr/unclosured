@@ -7,7 +7,7 @@
     padding: 0 120px;
     font-family: Quicksand;
     color: white;
-    font-size: 36px;
+    font-size: 25px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 6px;
@@ -22,8 +22,8 @@
     &::before {
       content: '';
       position: absolute;
-      width: 70%;
-      height: 4px;
+      width: 33%;
+      height: 1px;
       background-color: $yellow;
     }
 

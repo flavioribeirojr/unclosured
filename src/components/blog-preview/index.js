@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faShare, faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faShare } from '@fortawesome/free-solid-svg-icons';
+import { toast } from 'react-toastify';
+import { css } from 'glamor';
+import { copyTextToClipboard } from '../../services/clipboard';
 import style from './blog-preview.module.scss';
 
 function BlogPreview({
@@ -12,27 +15,23 @@ function BlogPreview({
   postOptionsItemClassName = ''
 }) {
   return (
-    <div className={style.blogPreview}>
+    <Link
+      to={`/${post.slug}`}
+      className={style.blogPreview}
+    >
       <img
         src={post.cover}
         alt={post.alt || 'Capa do post'}
         className={style.blogPreviewCover}
       />
       <div className={style.blogPreviewInfo}>
-        <Link
-          to={`/${post.slug}`}
-          className={`${style.blogPreviewInfoTitle} ${postTitleClassName}`}
-        >
+        <h2 className={`${style.blogPreviewInfoTitle} ${postTitleClassName}`}>
           { post.title }
-        </Link>
-        <p
-          className={`${style.blogPreviewInfoDescription} ${postDescriptionClassName}`}
-        >
+        </h2>
+        <p className={`${style.blogPreviewInfoDescription} ${postDescriptionClassName}`}>
           { post.description }
         </p>
-        <div
-          className={`${style.blogPreviewInfoOptions} ${postOptionsWrapperClassName}`}
-        >
+        <div className={`${style.blogPreviewInfoOptions} ${postOptionsWrapperClassName}`}>
           <button className={`${style.blogPreviewInfoOptionsItem} ${postOptionsItemClassName}`}>
             <FontAwesomeIcon
               className={style.blogPreviewInfoOptionsItemIcon}
@@ -42,7 +41,10 @@ function BlogPreview({
               { post.date }
             </span>
           </button>
-          <button className={`${style.blogPreviewInfoOptionsItem} ${postOptionsItemClassName}`}>
+          <button
+            onClick={copyPostLinkToClipboard}
+            className={`${style.blogPreviewInfoOptionsItem} ${postOptionsItemClassName}`}
+          >
             <FontAwesomeIcon
               className={style.blogPreviewInfoOptionsItemIcon}
               icon={faShare}
@@ -51,19 +53,29 @@ function BlogPreview({
               Compartilhar
             </span>
           </button>
-          <button className={`${style.blogPreviewInfoOptionsItem} ${postOptionsItemClassName}`}>
-            <FontAwesomeIcon
-              className={style.blogPreviewInfoOptionsItemIcon}
-              icon={faBookmark}
-            />
-            <span className={style.blogPreviewInfoOptionsItemText}>
-              Ler Depois
-            </span>
-          </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
+
+  function copyPostLinkToClipboard(event) {
+    event.preventDefault();
+    copyTextToClipboard(`${window.location.origin}/${post.slug}`);
+
+    toast('Link copiado :)', {
+      className: css({
+        background: 'black'
+      }),
+      bodyClassName: css({
+        fontSize: '18px',
+        color: 'white'
+      }),
+      progressClassName: css({
+        background: "radial-gradient(#a55eea 25%, #fed330 25%, #fc5c65 25%, #2bcbba 25%)",
+        fontFamily: 'Lato'
+      })
+    });
+  }
 }
 
 export default BlogPreview;
