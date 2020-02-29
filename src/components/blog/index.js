@@ -6,12 +6,10 @@ import style from './blog.module.scss';
 
 function Blog({
   posts,
+  highlitedPosts,
   numberOfPages,
   currentPage
 }) {
-  const highlightedPosts = posts.slice(0, 3);
-  const defaultPosts = posts.slice(3);
-
   return (
     <div className={style.blog}>
       <h2 className={style.blogTitle}>
@@ -19,7 +17,7 @@ function Blog({
       </h2>
       <div className={style.blogList}>
         {
-          highlightedPosts
+          highlitedPosts
             .map(post => (
               <BlogPreview
                 key={post.slug}
@@ -33,7 +31,7 @@ function Blog({
       </p>
       <div className={style.blogDefaultPostsList}>
         {
-          defaultPosts
+          posts
             .map(post => (
               <BlogPreview
                 key={post.slug}

@@ -12,7 +12,8 @@ const BlogList = ({ data, pageContext }) => {
     <Layout>
       <SEO title="Home" />
       <Blog
-        posts={getPosts(data.allMarkdownRemark.edges)}
+        highlitedPosts={getPosts(data.highlightedPosts.edges)}
+        posts={getPosts(data.defaultPosts.edges)}
         numberOfPages={pageContext.numberOfPages}
         currentPage={pageContext.currentPage}
       />
@@ -23,8 +24,29 @@ const BlogList = ({ data, pageContext }) => {
 export default BlogList;
 
 export const blogListQuery = graphql`
-  query blogListQuery($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(
+  query ($skip: Int!, $limit: Int!) {
+    highlightedPosts: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 3,
+      skip: 0
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            slug
+            description
+            cover
+            date(formatString: "DD/MM/YYYY")
+          }
+        }
+      }
+    }
+
+    defaultPosts: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit,
       skip: $skip

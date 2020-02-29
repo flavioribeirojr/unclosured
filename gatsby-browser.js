@@ -4,4 +4,11 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+exports.shouldUpdateScroll = ({prevRouterProps, routerProps}) => {
+  const isSwitchingBetweenBlogPages = (
+    (prevRouterProps.location.pathname === '/' && routerProps.location.href.includes('blog')) ||
+    (prevRouterProps.location.pathname.includes('blog') && routerProps.location.pathname === '/')
+  );
+
+  return !isSwitchingBetweenBlogPages;
+}; 
