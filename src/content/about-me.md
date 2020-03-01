@@ -8,6 +8,7 @@ description:
 cover: 'https://i.ibb.co/YPFRRxH/lagoa-de-jansen-crdito-seturma-1024x685.jpg'
 path: /about-me
 author: "{{authors.flavio}}"
+highlighted: true
 ---
 
 ### Fala aí, DEV!

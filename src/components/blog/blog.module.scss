@@ -24,7 +24,7 @@
       position: absolute;
       width: 33%;
       height: 1px;
-      background-color: $yellow;
+      background-color: white;
     }
 
     &::before {
@@ -39,7 +39,7 @@
   >.blogList {
     display: grid;
     grid-template-columns: 30% 30% 30%;
-    grid-auto-rows: 650px;
+    grid-auto-rows: 600px;
     grid-row-gap: 60px;
     justify-content: center;
     column-gap: 25px;
@@ -54,7 +54,7 @@
     letter-spacing: 2px;
     color: white;
     text-align: center;
-    margin: 70px 156px;
+    margin: 50px 156px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -84,6 +84,7 @@
     justify-content: center;
     grid-auto-rows: 400px;
     column-gap: 100px;
+    row-gap: 50px;
     padding: 0 120px;
     width: 100%;
     box-sizing: border-box;

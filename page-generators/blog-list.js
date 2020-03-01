@@ -45,7 +45,7 @@ const getBlogPageCreator = ({ createPage, numberOfPages }) => (_, index) => {
     component: path.resolve('./src/templates/blog-list/index.js'),
     context: {
       limit: POSTS_PER_PAGE,
-      skip: 3 + (index * POSTS_PER_PAGE),
+      skip: index * POSTS_PER_PAGE,
       numberOfPages,
       currentPage: index + 1
     }

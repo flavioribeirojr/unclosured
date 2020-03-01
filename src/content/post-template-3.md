@@ -7,6 +7,7 @@ description:
 cover: 'https://s3.envato.com/files/247617861/Preview%20Image.jpg'
 path: /post-template-3
 author: "{{authors.flavio}}"
+highlighted: true
 ---
 
 ### This is just a test template

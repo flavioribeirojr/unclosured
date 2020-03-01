@@ -28,7 +28,14 @@ export const blogListQuery = graphql`
     highlightedPosts: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 3,
-      skip: 0
+      skip: 0,
+      filter: {
+        frontmatter: {
+          highlighted: {
+            eq: true
+          }
+        }
+      }
     ) {
       edges {
         node {
