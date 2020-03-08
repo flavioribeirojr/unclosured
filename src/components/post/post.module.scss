@@ -36,7 +36,6 @@
       font-family: Ubuntu;
       color: white;
       line-height: 40px;
-      text-align: justify;
 
       h3 {
         font-size: 28px;
@@ -143,6 +142,75 @@
       font-family: Ubuntu;
       color: white;
       margin-top: 30px;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .postHeader {
+      .postHeaderTitle {
+        padding: 0 15px;
+        font-size: 28px;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+    }
+
+    .postBody {
+      padding: 10px 15px;
+
+      .postBodyContent {
+        h3 {
+          margin: 5px 0;
+          font-size: 22px;
+          text-align: center;
+
+          &::before {
+            display: block;
+          }
+        }
+
+        img {
+          width: 100%!important;
+        }
+
+        blockquote {
+          >p {
+            font-size: 16px;
+            line-height: 30px;
+          }
+
+          box-shadow: 0 0 10px #242424;
+        }
+      }
+    }
+
+    .postFooter {
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      padding-top: 90px;
+      height: auto;
+
+      >.postFooterPhoto {
+        align-self: center;
+        right: unset;
+      }
+
+      >.postFooterContact {
+        padding: 15px;
+        text-align: center;
+
+        >.postFooterContactPhrase {
+          text-align: center;
+          display: block;
+          width: 100%;
+        }
+      }
+
+      >.postFooterTime {
+        text-align: center;
+      }
     }
   }
 }

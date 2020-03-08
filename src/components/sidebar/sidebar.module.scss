@@ -21,6 +21,10 @@
     overflow: hidden;
     transition: max-height .6s linear;
 
+    >.sidebarToggle {
+      display: none;
+    }
+
     >img {
       width: 140px;
     }
@@ -189,6 +193,99 @@
           width: 18px;
           height: 38px;
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    height: 15vh;
+    width: 100vw;
+    overflow: hidden;
+    padding-top: 0;
+    position: fixed;
+    padding: 0 10px;
+    transition: height .3s linear;
+
+    &.showMobileSidebar {
+      height: 100vh;
+      justify-content: flex-start;
+
+      >.logo {
+        height: auto;
+        margin-top: 30px;
+      }
+
+      >.sidebarFooter,
+      >.sidebarNav,
+      >.sidebarSearch {
+        height: auto;
+      }
+
+      >.sidebarFooter {
+        margin: 0;
+        margin-top: auto;
+        justify-content: center;
+
+        >.sidebarFooterContact {
+          width: 100%;
+          margin: 10px 30px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          >.sidebarFooterContactMedia {
+            width: 80%;
+          }
+        }
+      }
+    }
+
+    >.logo {
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      height: 100%;
+
+      >.sidebarToggle {
+        display: block;
+        background: transparent;
+        border: none;
+        margin-right: 25px;
+
+        >.sidebarToggleIcon {
+          color: white;
+          font-size: 25px;
+        }
+      }
+
+      >img {
+        width: 85px;
+        height: 85px;
+        margin-right: 5px;
+      }
+      >.brand {
+        font-size: 20px;
+        align-self: auto;
+
+        >br {
+          display: none;
+        }
+      }
+    }
+
+    >.sidebarSearch >.sidebarSearchWrapper {
+      margin-top: 70px;
+    }
+
+    >.sidebarSearch,
+    >.sidebarNav,
+    >.sidebarFooter {
+      height: 0;
+      margin: 0;
+
+      >.sidebarFooterStroke {
+        display: none;
       }
     }
   }

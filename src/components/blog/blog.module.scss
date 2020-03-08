@@ -136,4 +136,39 @@
       }
     }
   }
+
+  @media screen and (max-width: 992px) {
+    >.blogList,
+    >.blogDefaultPostsList {
+      padding: 0 20px;
+    }
+
+    >.blogTitle {
+      display: none;
+    }
+
+    >.blogListSeparator {
+      margin: 30px 30px;
+    
+      &::before,
+      &::after {
+        width: 20%;
+      }
+    }
+
+    >.blogList,
+    >.blogDefaultPostsList {
+      grid-template-columns: 100%;
+      grid-auto-rows: 400px;
+    }
+
+    >.blogDefaultPostsList {
+      .blogDefaultPostsListItemTitle {
+        margin-bottom: auto;
+      }
+      .blogDefaultPostsListItemDescription {
+        height: auto;
+      }
+    }
+  }
 }

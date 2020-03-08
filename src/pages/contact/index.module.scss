@@ -2,7 +2,7 @@
   height: 100%;
   padding: 30px 50px;
   position: relative;
-  background-color: rgba($color: #000000, $alpha: 0.4);
+  background-color: rgba($color: #000000, $alpha: 0.2);
 
   &::after {
     content: '';
@@ -11,8 +11,7 @@
     left: 0;
     z-index: -1;
     width: 100%;
-    height: 100%;
-    background-image: url('https://images.cdn3.stockunlimited.net/preview1300/galaxy-background-design_2001749.jpg');
+    height: 100%;    
     background-size: cover;
   }
 
@@ -60,6 +59,18 @@
       font-family: Anton;
       letter-spacing: 4px;
       font-size: 30px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    padding: 30px 20px;
+
+    >.contactForm {
+      width: 100%;
+
+      >.contactFormSubmit {
+        font-size: 24px;
+      }
     }
   }
 }

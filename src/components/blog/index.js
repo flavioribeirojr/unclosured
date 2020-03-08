@@ -15,6 +15,9 @@ function Blog({
       <h2 className={style.blogTitle}>
         Blog Borda do Universo
       </h2>
+      <p className={style.blogListSeparator}>
+        Destaques
+      </p>
       <div className={style.blogList}>
         {
           highlitedPosts
@@ -27,7 +30,7 @@ function Blog({
         }
       </div>
       <p className={style.blogListSeparator}>
-        Posts Antigos
+        Postagens
       </p>
       <div className={style.blogDefaultPostsList}>
         {

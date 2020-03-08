@@ -54,6 +54,8 @@
     border-bottom-right-radius: 4px;
     max-height: 250px;
     overflow-y: auto;
+    position: absolute;
+    z-index: 2;
   
     >.searchResultsItem {
       &:hover {
