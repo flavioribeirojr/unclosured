@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faShare } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
@@ -15,9 +15,11 @@ function BlogPreview({
   postOptionsItemClassName = ''
 }) {
   return (
-    <Link
+    <AniLink
       to={`/${post.slug}`}
       className={style.blogPreview}
+      swipe
+      direction="left"
     >
       <img
         src={post.cover}
@@ -55,7 +57,7 @@ function BlogPreview({
           </button>
         </div>
       </div>
-    </Link>
+    </AniLink>
   );
 
   function copyPostLinkToClipboard(event) {

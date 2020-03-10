@@ -6,32 +6,11 @@ import style from './blog.module.scss';
 
 function Blog({
   posts,
-  highlitedPosts,
   numberOfPages,
   currentPage
 }) {
   return (
     <div className={style.blog}>
-      <h2 className={style.blogTitle}>
-        Blog Borda do Universo
-      </h2>
-      <p className={style.blogListSeparator}>
-        Destaques
-      </p>
-      <div className={style.blogList}>
-        {
-          highlitedPosts
-            .map(post => (
-              <BlogPreview
-                key={post.slug}
-                post={post}
-              />
-            ))
-        }
-      </div>
-      <p className={style.blogListSeparator}>
-        Postagens
-      </p>
       <div className={style.blogDefaultPostsList}>
         {
           posts

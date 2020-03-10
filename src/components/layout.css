@@ -17,6 +17,11 @@ main {
     margin-left: 380px;
 }
 
+main .tl-edges .tl-wrapper,
+main .tl-edges {
+    height: 100%;
+}
+
 #gatsby-focus-wrapper {
     position: relative;
 }
@@ -25,5 +30,6 @@ main {
     main {
         margin-left: 0;
         margin-top: 15vh;
+        height: auto;
     }
 }

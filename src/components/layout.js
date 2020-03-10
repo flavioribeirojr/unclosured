@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Sidebar from './sidebar';
+import LayoutContent from './layout-content';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./layout.css";
@@ -9,9 +10,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <Sidebar />
-      <main>
+      <LayoutContent>
         { children }
-      </main>
+      </LayoutContent>
       <ToastContainer />
     </>
   );

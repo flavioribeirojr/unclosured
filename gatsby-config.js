@@ -7,11 +7,17 @@ const queries = require("./src/utils/algolia");
 
 module.exports = {
   siteMetadata: {
-    title: `Borda do Universo`,
+    title: `unClosured`,
     description: `Textos, artigos e links sobre tecnologia e entretenimento`,
     author: `@flavioribeirojr`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-transition-link",
+      options: {
+        layout: require.resolve(`./src/components/layout.js`)
+      }
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
@@ -32,7 +38,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/bdu.png`, // This path is relative to the root of the site.
+        icon: `src/images/unclosured_favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -45,7 +51,6 @@ module.exports = {
         }
       }
     },
-    //`gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

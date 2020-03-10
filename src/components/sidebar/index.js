@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { ON_SEARCH_RESULT_SELECTED } from '../../events/search';
 import Search from '../search';
 import style from './sidebar.module.scss';
-import BDULogo from '../../images/bdu.png';
+import UnClosuredLogo from '../../images/unclosured.png';
 
 const socialMedias = [
   {
@@ -52,11 +52,7 @@ function Sidebar() {
   return (
     <aside className={getSidebarClassName()}>
       <div className={style.logo}>
-        <img src={BDULogo} alt="Borda do Universo" />
-        <h1 className={style.brand}>
-          BORDA DO <br />
-          UNIVERSO
-        </h1>
+        <img src={UnClosuredLogo} alt="un closured" />
         <button className={style.sidebarToggle} onClick={toggleMobileSidebar}>
           <FontAwesomeIcon
             className={style.sidebarToggleIcon}
@@ -78,12 +74,14 @@ function Sidebar() {
                   key={`${navigationItem.url}-${index}`}
                   className={style.sidebarNavListItem}
                 >
-                  <Link
+                  <AniLink
                     to={navigationItem.url}
                     className={style.sidebarNavListItemLink}
+                    swipe
+                    direction="down"
                   >
                     { navigationItem.name }
-                  </Link>
+                  </AniLink>
                 </li>
               ))
           }

@@ -1,12 +1,11 @@
 import React from 'react';
-import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 import FormGroup from '../../components/form-group';
 import styles from './index.module.scss';
 
 function Contact() {
   return (
-    <Layout>
+    <>
       <SEO title="Contato"/>
       <section className={styles.contact}>
         <h2 className={styles.contactTitle}>
@@ -45,7 +44,7 @@ function Contact() {
           </button>
         </form>
       </section>
-    </Layout>
+    </>
   );
 }
 
