@@ -121,12 +121,21 @@
       margin-top: auto;
       margin-bottom: 35px;
 
+      >.sidebarFooterContactNote {
+        font-family: UbuntuLight;
+        color: white;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+      }
+
       >.sidebarFooterContactName {
         letter-spacing: 1px;
         font-family: Anton;
         font-style: normal;
         font-size: 32px;
         color: white;
+        margin-top: 10px;
         margin-bottom: 10px;
       }
 

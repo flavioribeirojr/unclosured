@@ -9,7 +9,6 @@ const DefautInputComponent = props => (
 
 function FormGroup({
   label,
-  children,
   Input = DefautInputComponent,
   inputClassName = '',
   labelClassName = '',
@@ -37,11 +36,11 @@ function FormGroup({
   );
 
   function onChange(event) {
-    setInputHasValue(event.target.value !== '');
-
     if (inputProps.onChange) {
-      inputProps.onChange(event)
+      inputProps.onChange(event);
     }
+
+    setInputHasValue(event.target.value !== '');
   }
 
   function onInputFocus() {

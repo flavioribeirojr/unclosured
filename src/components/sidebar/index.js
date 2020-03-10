@@ -79,6 +79,7 @@ function Sidebar() {
                     className={style.sidebarNavListItemLink}
                     swipe
                     direction="down"
+                    onClick={hideMobileSidebar}
                   >
                     { navigationItem.name }
                   </AniLink>
@@ -89,6 +90,9 @@ function Sidebar() {
       </nav>
       <div className={style.sidebarFooter}>
         <address className={style.sidebarFooterContact}>
+          <small className={style.sidebarFooterContactNote}>
+            Um blog por
+          </small>
           <p className={style.sidebarFooterContactName}>
             Flávio Ribeiro
           </p>
@@ -126,6 +130,10 @@ function Sidebar() {
 
   function toggleMobileSidebar() {
     setShowMobileSidebar(!showMobileSidebar);
+  }
+
+  function hideMobileSidebar() {
+    setShowMobileSidebar(false);
   }
 }
 

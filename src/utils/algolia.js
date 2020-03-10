@@ -9,6 +9,7 @@ const postsQuery = `{
           title
           description
           slug
+          path
           date(formatString: "DD/MM/YYYY")
         }
       }

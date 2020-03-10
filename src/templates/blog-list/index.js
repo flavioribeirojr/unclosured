@@ -38,6 +38,7 @@ export const blogListQuery = graphql`
             slug
             description
             cover
+            path
             date(formatString: "DD/MM/YYYY")
           }
         }

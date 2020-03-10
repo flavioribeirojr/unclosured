@@ -16,7 +16,7 @@ function Search() {
     >
       <div className={`${style.searchContainer} ${shouldHighlightBox ? style.highlitedBox : ''}`}>
         <SearchInput setFocus={setFocus} setHighlight={setHighlight} />
-        <SearchResults isFocused={isFocused} />
+        <SearchResults isFocused={isFocused} onResultSelected={() => setFocus(false)} />
       </div>
     </InstantSearch>
   )
