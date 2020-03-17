@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://unclosured.com/sitemap.xml
+Host: https://unclosured.com
