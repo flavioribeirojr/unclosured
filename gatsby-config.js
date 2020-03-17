@@ -7,9 +7,15 @@ const queries = require("./src/utils/algolia");
 
 module.exports = {
   siteMetadata: {
-    title: `unClosured`,
-    description: `Textos, artigos e links sobre tecnologia e entretenimento`,
+    title: `unClosured.com`,
+    description: `
+      Blog sobre tecnologia e seu desenvolvimento. Aqui você
+      poderá obter informações sobre desenvolvimento back-end(Node JS, PHP),
+      front-end(JavaScript, React), além de dicas sobre padrões de projeto,
+      libs e frameworks.
+    `,
     author: `@flavioribeirojr`,
+    siteUrl: 'https://unclosured.com'
   },
   plugins: [
     {
@@ -67,7 +73,9 @@ module.exports = {
         queries,
         chunkSize: 10000
       }
-    }
+    },
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

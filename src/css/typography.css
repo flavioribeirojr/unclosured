@@ -3,25 +3,25 @@
 
 @font-face {
     font-family: Anton;
-    src: url('../fonts/Anton-Regular.ttf');
+    src: url('../fonts/Anton-Regular.ttf') format("truetype");
 }
 
 @font-face {
     font-family: Solway;
-    src: url('../fonts/Solway-Regular.ttf');
+    src: url('../fonts/Solway-Regular.ttf') format("truetype");
 }
 
 @font-face {
     font-family: SolwayLight;
-    src: url('../fonts/Solway-Light.ttf');
+    src: url('../fonts/Solway-Light.ttf') format("truetype");
 }
 
 @font-face {
     font-family: Ubuntu;
-    src: url('../fonts/Ubuntu-M.ttf');
+    src: url('../fonts/Ubuntu-M.ttf') format("truetype");
 }
 
 @font-face {
     font-family: UbuntuLight;
-    src: url('../fonts/Ubuntu-L.ttf');
+    src: url('../fonts/Ubuntu-L.ttf') format("truetype");
 }

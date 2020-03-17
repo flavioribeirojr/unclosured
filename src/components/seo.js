@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import UnClosuredLogo from '../images/unclosured.png';
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -52,6 +53,10 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: UnClosuredLogo
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -73,7 +78,7 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `pt-br`,
   meta: [],
   description: ``,
 }
