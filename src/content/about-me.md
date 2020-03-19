@@ -16,7 +16,7 @@ highlighted: true
 Me chamo Flávio, trabalho com desenvolvimento **web** desde 2017, mas já engatinho no mundo da programação
 desde 2014, quando comecei na faculdade (não concluída 😅). Passei por bastantes desafios nesse meio tempo, tanto
 pessoais quanto profissionais. Tem um tempo que venho pensado em construir um blog com intuito de compartilhar
-conhecimento, e ganhar também!
+conhecimento.
 
 Já tem algum tempo que não escrevo, portanto peço a você, caro leitor, que perdoe qualquer tipo de falha em meus
 textos. Acredito que a prática vai me colocar de volta aos eixos!

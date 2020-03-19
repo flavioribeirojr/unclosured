@@ -33,7 +33,7 @@
     padding-bottom: 40px;
 
     .postBodyContent {
-      font-family: Ubuntu;
+      font-family: "open sans";
       color: white;
       line-height: 40px;
 
@@ -147,6 +147,10 @@
   
   @media screen and (max-width: 992px) {
     .postHeader {
+      height: 260px;
+      .postHeaderCover {
+        height: 200px;
+      }
       .postHeaderTitle {
         padding: 0 15px;
         font-size: 28px;
@@ -166,6 +170,8 @@
 
           &::before {
             display: block;
+            margin-right: 0;
+            font-size: 30px;
           }
         }
 

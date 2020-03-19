@@ -50,12 +50,12 @@
       margin-bottom: 15px;
 
       >.blogPreviewInfoOptionsItem {
+        display: flex;
+        align-items: center;
         background: transparent;
         border: none;
         cursor: pointer;
         padding: 0;
-        display: grid;
-        grid-template-columns: 20px auto;
         justify-content: flex-start;
         align-items: center;
         margin: 5px 0;
@@ -63,6 +63,7 @@
         >.blogPreviewInfoOptionsItemIcon {
           color: white;
           font-size: 13px;
+          margin-right: 10px;
         }
 
         >.blogPreviewInfoOptionsItemText {
