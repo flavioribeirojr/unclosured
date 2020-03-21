@@ -17,6 +17,7 @@ function SearchInput({ refine, hits, setFocus, setHighlight }) {
       <FontAwesomeIcon
         icon={faSearch}
         className={style.sidebarSearchWrapperIcon}
+        size={18}
       />
       <input
         ref={inputRef}

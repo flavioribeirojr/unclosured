@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import { config } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -7,6 +8,9 @@ import { ON_SEARCH_RESULT_SELECTED } from '../../events/search';
 import Search from '../search';
 import style from './sidebar.module.scss';
 import UnClosuredLogo from '../../images/unclosured.png';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
+config.autoAddCss = false;
 
 const socialMedias = [
   {
@@ -106,7 +110,10 @@ function Sidebar() {
                     target="blank"
                     key={index}
                   >
-                    <FontAwesomeIcon className={style.sidebarFooterContactMediaIcon} icon={socialMedia.icon} />
+                    <FontAwesomeIcon
+                      className={style.sidebarFooterContactMediaIcon}
+                      icon={socialMedia.icon}
+                    />
                   </a>
                 ))
             }

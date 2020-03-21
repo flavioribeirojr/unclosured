@@ -15,7 +15,8 @@ module.exports = {
       libs e frameworks.
     `,
     author: `@flavioribeirojr`,
-    siteUrl: 'https://unclosured.com'
+    siteUrl: 'https://unclosured.com',
+    image: '/images/unclosured_black_background.png'
   },
   plugins: [
     {

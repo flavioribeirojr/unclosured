@@ -50,6 +50,7 @@ function BlogPreview({
             <FontAwesomeIcon
               className={style.blogPreviewInfoOptionsItemIcon}
               icon={faShare}
+              size={13}
             />
             <span className={style.blogPreviewInfoOptionsItemText}>
               Compartilhar
