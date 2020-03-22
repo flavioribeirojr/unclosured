@@ -25,7 +25,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
-        cover,
+        cover
+        coverCredit
         author {
           name
           title

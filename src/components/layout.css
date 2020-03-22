@@ -1,3 +1,4 @@
+@import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/one-dark.css');
 @import "../css/typography.css";
 
 html, body {
@@ -21,6 +22,25 @@ main .tl-edges {
 
 #gatsby-focus-wrapper {
     position: relative;
+}
+
+.gist .gist-meta a {
+    color: #a55eea !important;
+}
+
+.gist .gist-meta {
+    background-color: #242424;
+}
+
+.gist .gist-data {
+    border: 1px solid #242424;
+}
+
+.gist .gist-file,
+.gist .gist-data {
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
 }
 
 @media screen and (max-width: 992px) {

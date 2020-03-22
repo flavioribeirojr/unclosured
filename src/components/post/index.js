@@ -2,14 +2,24 @@ import React from 'react';
 import style from './post.module.scss';
 
 function Post({ post, content }) {
+  const formattedPostDate = (new Date(post.date)).toLocaleDateString();
+
   return (
     <article className={style.post}>
       <header className={style.postHeader}>
-        <img
-          className={style.postHeaderCover}
-          src={post.cover}
-          alt=""
-        />
+        <figure className={style.postHeaderCover}>
+          <img
+            src={post.cover}
+            alt=""
+          />
+          {
+            post.coverCredit && (
+              <figcaption className={style.postHeaderCoverCredit}>
+                { post.coverCredit }
+              </figcaption>
+            )
+          }
+        </figure>
         <h2
           className={style.postHeaderTitle}
         >
@@ -35,7 +45,7 @@ function Post({ post, content }) {
           </blockquote>
         </address>
         <p className={style.postFooterTime}>
-          Posted at <time dateTime={post.date}>{ post.date }</time>
+          Data de publicação: <time dateTime={post.date}>{ formattedPostDate }</time>
         </p>
         <img
           src={post.author.photo}

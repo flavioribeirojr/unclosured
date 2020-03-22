@@ -51,6 +51,16 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       "options": {
+        plugins: [
+          {
+            resolve: "gatsby-remark-embed-gist",
+            options: {
+              // a flag indicating whether the github default gist css should be included or not
+              // default: true
+              includeDefaultCss: true
+            }
+          }
+        ],
         engines: {
             yaml: gatsbyFrontMatterTemplateParser({
                 yamlModelsDirectory
