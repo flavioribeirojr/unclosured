@@ -3,13 +3,13 @@
 .post {
   .postHeader {
     position: relative;
-    height: 380px;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
 
     .postHeaderCover {
-      height: 100%;
+      height: 350px;
       width: 100%;
       margin: 0;
 
@@ -37,14 +37,14 @@
       letter-spacing: 8px;
       position: relative;
       margin-top: 30px;
-      margin-bottom: 65px;
+      margin-bottom: 0;
       padding: 0 80px;
     }
   }
 
   .postBody {
     padding: 0 80px;
-    padding-top: 80px;
+    padding-top: 0;
     padding-bottom: 40px;
 
     .postBodyContent {

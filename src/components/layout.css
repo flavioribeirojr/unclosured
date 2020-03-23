@@ -29,18 +29,18 @@ main .tl-edges {
 }
 
 .gist .gist-meta {
-    background-color: #242424;
+    background-color: #242424!important;
 }
 
 .gist .gist-data {
-    border: 1px solid #242424;
+    border: 1px solid #242424!important;
 }
 
 .gist .gist-file,
 .gist .gist-data {
-    border: none;
-    border-radius: 0;
-    background-color: transparent;
+    border: none!important;
+    border-radius: 0!important;
+    background-color: transparent!important;
 }
 
 @media screen and (max-width: 992px) {
