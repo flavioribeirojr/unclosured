@@ -28,7 +28,7 @@
     "gatsby-remark-embed-gist": "^1.1.9",
     "gatsby-remark-embed-markdown": "0.0.4",
     "gatsby-source-filesystem": "^2.1.46",
-    "gatsby-transformer-remark": "^2.6.48",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.3.7",
     "glamor": "^2.20.40",
     "gsap": "^3.2.4",
